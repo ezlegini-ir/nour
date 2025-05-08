@@ -11,10 +11,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased max-w-screen-xl mx-auto grid grid-rows-[auto_1fr_auto] min-h-screen dark`}
+        className={`antialiased max-w-screen-xl mx-auto grid grid-rows-[auto_1fr_auto] min-h-screen dark px-4`}
       >
         <NavBar />
-        {children}
+        <div className="my-16">{children}</div>
         <Footer />
       </body>
     </html>

@@ -124,4 +124,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  html {
+    @apply overflow-y-scroll scroll-smooth;
+  }
 }
