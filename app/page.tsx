@@ -7,12 +7,13 @@ const page = () => {
   return (
     <div className="flex justify-between items-center">
       <div className="space-y-3 max-w-xl">
-        <h1 className="flex flex-col gap-1">
-          <span className="text-3xl">Welcome To</span>{" "}
+        <h1 className="flex flex-col gap-2">
+          <span className="text-xl">
+            Experience the Art of Colorful Dining with
+          </span>
           <span className="text-primary text-6xl font-bold">
             Nour Porcelain Co
           </span>
-          <span className="text-3xl">Website</span>
         </h1>
 
         <p className="text-muted-foreground">

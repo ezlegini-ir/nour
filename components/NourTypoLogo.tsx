@@ -2,19 +2,17 @@ import Image from "next/image";
 
 interface Props {
   size?: number;
-  inputProps?: any;
   className?: string;
 }
 
-const NourTypoLogo = ({ inputProps, className, size }: Props) => {
+const NourTypoLogo = ({ className, size }: Props) => {
   return (
     <Image
       src={"/nour-typo-logo.svg"}
       alt={"Nour Porcelain"}
-      width={size || 65}
-      height={size || 65}
+      width={size || 70}
+      height={size || 70}
       draggable={false}
-      {...inputProps}
       className={className}
     />
   );
