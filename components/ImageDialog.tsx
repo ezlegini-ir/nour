@@ -29,7 +29,7 @@ const ImageDialog = ({ images }: Props) => {
               />
             </div>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[650px] p-0">
+          <DialogContent className="sm:max-w-[650px] p-1">
             <DialogHeader className="sr-only">
               <DialogTitle>Image {index + 1}</DialogTitle>
             </DialogHeader>

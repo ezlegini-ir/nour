@@ -21,7 +21,7 @@ const NavBar = () => {
         </ul>
 
         <Button>
-          <Link href={"/login"}>Sign In</Link>
+          <Link href={"/login"}>Login</Link>
         </Button>
       </div>
     </div>
