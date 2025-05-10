@@ -1,5 +1,6 @@
 "use client";
 
+import { authenticator } from "@/actions/login";
 import Loader from "@/components/Loader";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,6 +15,7 @@ import { Input } from "@/components/ui/input";
 import { useLoading } from "@/hooks/useLoading";
 import { LoginFormType, loginFormSchema } from "@/lib/validationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { redirect } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -30,8 +32,24 @@ const InputForm = () => {
   });
 
   const onSubmit = async (data: LoginFormType) => {
-    setLoading(true);
+    // setLoading(true);
+
+    const res = await authenticator(data.email, data.password);
+
+    if (res?.error) {
+      toast.error(res.error);
+      setLoading(false);
+      return;
+    }
+
+    if (res.success) {
+      setLoading(false);
+      toast.success("Login successful");
+      redirect("/panel");
+    }
+
     toast.success("Login successful");
+    redirect("/panel");
   };
 
   return (
