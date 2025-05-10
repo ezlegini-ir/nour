@@ -117,6 +117,12 @@ body {
   --sidebar-ring: oklch(0.554 0.135 66.442);
 }
 
+/* THIS SOLVES ISSUE WITH SHADCN LAYOUT SHIFT */
+html > body[data-scroll-locked] {
+  overflow: visible !important;
+  margin-right: 0 !important;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

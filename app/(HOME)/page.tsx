@@ -25,12 +25,14 @@ const page = () => {
         </p>
 
         <div className="flex gap-3 pt-3">
-          <Button size={"lg"}>
-            <Link href={"/products"}>Visit Products</Link>
-          </Button>
-          <Button size={"lg"} variant={"secondary"}>
-            <Link href={"/contact"}>Contact Us</Link>
-          </Button>
+          <Link href={"/products"}>
+            <Button size={"lg"}>Visit Products</Button>
+          </Link>
+          <Link href={"/contact"}>
+            <Button size={"lg"} variant={"secondary"}>
+              Contact Us
+            </Button>
+          </Link>
         </div>
       </div>
       <Image alt="" src={italiGray} size={1200} className="w-[600px]" />

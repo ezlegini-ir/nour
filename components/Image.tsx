@@ -11,11 +11,13 @@ interface Props {
 const Image = ({ alt, src, size, className }: Props) => {
   return (
     <NextImage
+      placeholder="blur"
+      blurDataURL={src}
       alt={alt}
       src={src}
       width={size || 625}
       height={size || 625}
-      className={className}
+      className={`${className} object-cover`}
     />
   );
 };

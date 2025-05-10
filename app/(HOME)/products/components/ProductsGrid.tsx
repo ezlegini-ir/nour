@@ -1,4 +1,6 @@
+import Image from "@/components/Image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { dish } from "@/public/products";
 import Link from "next/link";
 
 const ProductsGrid = () => {
@@ -19,7 +21,12 @@ const ProductsGrid = () => {
               {Array.from({ length: 15 }).map((_, idx) => (
                 <Link href={"/products/1"} key={idx}>
                   <div className="bg-muted rounded-md aspect-square text-muted-foreground flex items-center justify-center">
-                    Photo {idx + 1}
+                    <Image
+                      alt={`Photo ${idx + 1}`}
+                      src={dish}
+                      size={300}
+                      className="rounded-md object-cover"
+                    />
                   </div>
                 </Link>
               ))}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -7,9 +8,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="dark">{children}</body>
-    </html>
+    <div
+      className={`antialiased max-w-screen-xl mx-auto grid grid-rows-[auto_1fr_auto] min-h-screen px-4`}
+    >
+      <NavBar />
+      <div className="my-16">{children}</div>
+      <Footer />
+    </div>
   );
 }
 

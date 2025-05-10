@@ -1,6 +1,5 @@
-import React from "react";
-import NourLogo from "./NourLogo";
 import Link from "next/link";
+import NourLogo from "./NourLogo";
 import { Button } from "./ui/button";
 
 const NavBar = () => {
