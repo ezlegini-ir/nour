@@ -1,4 +1,10 @@
-import { ChartNoAxesGantt, Home, LogOut, ScanBarcode } from "lucide-react";
+import {
+  ChartNoAxesGantt,
+  Home,
+  LogOut,
+  ScanBarcode,
+  User,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -15,6 +21,7 @@ import {
 import Link from "next/link";
 import NourTypoLogo from "./NourTypoLogo";
 import { Button } from "./ui/button";
+import { getSessionAdmin } from "@/data/admin";
 
 // Menu items.
 const items = [
@@ -35,13 +42,19 @@ const items = [
   },
 ];
 
-export function AppSidebar() {
+export async function AppSidebar() {
+  const admin = await getSessionAdmin();
   return (
     <Sidebar>
-      <SidebarHeader className="p-4 pt-6">
+      <SidebarHeader className="p-4 pt-6 space-y-6">
         <Link href={"/"}>
           <NourTypoLogo />
         </Link>
+
+        <Button variant={"outline"} className=" justify-start cursor-auto py-5">
+          <User />
+          {admin?.name}
+        </Button>
       </SidebarHeader>
 
       <SidebarContent>

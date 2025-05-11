@@ -129,6 +129,50 @@ exports.Prisma.AdminScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.ProductScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  productStatus: 'productStatus',
+  url: 'url',
+  imageId: 'imageId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ImageScalarFieldEnum = {
+  id: 'id',
+  url: 'url',
+  publicId: 'publicId',
+  width: 'width',
+  height: 'height',
+  format: 'format',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.ProductGalleryScalarFieldEnum = {
+  id: 'id',
+  productId: 'productId',
+  imageId: 'imageId'
+};
+
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.ProductCategoryScalarFieldEnum = {
+  productId: 'productId',
+  categoryId: 'categoryId'
+};
+
+exports.Prisma.QualificationScalarFieldEnum = {
+  id: 'id',
+  metric: 'metric',
+  value: 'value',
+  productId: 'productId'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -139,9 +183,23 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+exports.ProductStatus = exports.$Enums.ProductStatus = {
+  PUBLISHED: 'PUBLISHED',
+  DRAFT: 'DRAFT'
+};
 
 exports.Prisma.ModelName = {
-  Admin: 'Admin'
+  Admin: 'Admin',
+  Product: 'Product',
+  Image: 'Image',
+  ProductGallery: 'ProductGallery',
+  Category: 'Category',
+  ProductCategory: 'ProductCategory',
+  Qualification: 'Qualification'
 };
 
 /**
