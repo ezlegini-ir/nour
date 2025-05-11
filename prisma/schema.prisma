@@ -16,3 +16,61 @@ model Admin {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Product {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String @db.Text
+
+  image          Image?            @relation("ProductImage", fields: [imageId], references: [id])
+  imageId        Int?
+  galleryImages  ProductGallery[]
+  categories     ProductCategory[]
+  qualifications Qualification[]
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+}
+
+model Image {
+  id        Int      @id @default(autoincrement())
+  url       String
+  publicId  String
+  width     Int?
+  height    Int?
+  format    String?
+  createdAt DateTime @default(now())
+
+  product Product?         @relation("ProductImage")
+  gallery ProductGallery[]
+}
+
+model ProductGallery {
+  id        Int     @id @default(autoincrement())
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+  image     Image   @relation(fields: [imageId], references: [id])
+  imageId   Int
+}
+
+model Category {
+  id       Int               @id @default(autoincrement())
+  name     String            @unique
+  products ProductCategory[]
+}
+
+model ProductCategory {
+  product    Product  @relation(fields: [productId], references: [id])
+  productId  Int
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+
+  @@id([productId, categoryId])
+}
+
+model Qualification {
+  id        Int     @id @default(autoincrement())
+  metric    String
+  value     String
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+}
