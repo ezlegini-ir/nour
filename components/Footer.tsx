@@ -10,7 +10,13 @@ const Footer = () => {
         </Link>
 
         <p className="text-center md:text-right">
-          © {new Date().getFullYear()} Nour Porcelain Co. All rights reserved.
+          © {new Date().getFullYear()} Nour Porcelain Co |{" "}
+          <span>
+            Developed By{" "}
+            <a target="_blank" href="https://igraphical.ir">
+              iGraphical Co.
+            </a>
+          </span>
         </p>
       </div>
     </footer>

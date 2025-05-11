@@ -1,8 +1,12 @@
 import Link from "next/link";
 import NourLogo from "./NourLogo";
 import { Button } from "./ui/button";
+import { getSessionAdmin } from "@/data/admin";
+import { User } from "lucide-react";
 
-const NavBar = () => {
+const NavBar = async () => {
+  const admin = await getSessionAdmin();
+
   return (
     <div className="flex items-center justify-between py-4">
       <Link href={"/"}>
@@ -20,9 +24,21 @@ const NavBar = () => {
           ))}
         </ul>
 
-        <Link href={"/login"}>
-          <Button>Login</Button>
-        </Link>
+        {admin ? (
+          <Link href={"/panel"}>
+            <Button variant={"outline"}>
+              <User />
+              {admin.name}
+            </Button>
+          </Link>
+        ) : (
+          <Link href={"/panel"}>
+            <Button>
+              <User />
+              Login
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
   );
