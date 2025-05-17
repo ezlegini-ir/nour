@@ -1,7 +1,7 @@
 import NewButton from "@/components/NewButton";
 import { prisma } from "@/prisma/client";
 import { globalPageSize, pagination } from "@/utils/pagination";
-import PostsList from "./PostsList";
+import ProductsList from "./ProductsList";
 interface Props {
   searchParams: Promise<{ page: string }>;
 }
@@ -27,11 +27,11 @@ const page = async ({ searchParams }: Props) => {
       <div className="flex flex-col sm:flex-row gap-2 sm:justify-between sm:items-center">
         <h3 className="text-2xl font-semibold">{totalPosts} Post</h3>
         <div className="flex gap-3 justify-between items-center">
-          <NewButton href="/posts/new" title="New Post" />
+          <NewButton href="/panel/products/new" title="New Product" />
         </div>
       </div>
 
-      <PostsList
+      <ProductsList
         product={products}
         totalProducts={totalPosts}
         pageSize={globalPageSize}

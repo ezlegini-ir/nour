@@ -18,11 +18,13 @@ model Admin {
 }
 
 model Product {
-  id            Int           @id @default(autoincrement())
-  title         String
-  description   String        @db.Text
-  productStatus ProductStatus
-  url           String
+  id             Int           @id @default(autoincrement())
+  title_en       String
+  title_fa       String
+  description_en String        @db.Text
+  description_fa String        @db.Text
+  status         ProductStatus
+  url            String
 
   image          Image?            @relation("ProductImage", fields: [imageId], references: [id])
   imageId        Int?              @unique
@@ -41,7 +43,7 @@ enum ProductStatus {
 model Image {
   id        Int      @id @default(autoincrement())
   url       String
-  publicId  String
+  public_id String   @unique
   width     Int?
   height    Int?
   format    String?
@@ -61,7 +63,8 @@ model ProductGallery {
 
 model Category {
   id       Int               @id @default(autoincrement())
-  name     String            @unique
+  name_en  String            @unique
+  name_fa  String            @unique
   products ProductCategory[]
 }
 
@@ -76,8 +79,10 @@ model ProductCategory {
 
 model Qualification {
   id        Int     @id @default(autoincrement())
-  metric    String
-  value     String
-  product   Product @relation(fields: [productId], references: [id])
+  metric_en String
+  metric_fa String
+  value_en  String
+  value_fa  String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
   productId Int
 }

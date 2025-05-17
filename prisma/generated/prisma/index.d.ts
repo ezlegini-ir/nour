@@ -2608,9 +2608,11 @@ export namespace Prisma {
 
   export type ProductMinAggregateOutputType = {
     id: number | null
-    title: string | null
-    description: string | null
-    productStatus: $Enums.ProductStatus | null
+    title_en: string | null
+    title_fa: string | null
+    description_en: string | null
+    description_fa: string | null
+    status: $Enums.ProductStatus | null
     url: string | null
     imageId: number | null
     createdAt: Date | null
@@ -2619,9 +2621,11 @@ export namespace Prisma {
 
   export type ProductMaxAggregateOutputType = {
     id: number | null
-    title: string | null
-    description: string | null
-    productStatus: $Enums.ProductStatus | null
+    title_en: string | null
+    title_fa: string | null
+    description_en: string | null
+    description_fa: string | null
+    status: $Enums.ProductStatus | null
     url: string | null
     imageId: number | null
     createdAt: Date | null
@@ -2630,9 +2634,11 @@ export namespace Prisma {
 
   export type ProductCountAggregateOutputType = {
     id: number
-    title: number
-    description: number
-    productStatus: number
+    title_en: number
+    title_fa: number
+    description_en: number
+    description_fa: number
+    status: number
     url: number
     imageId: number
     createdAt: number
@@ -2653,9 +2659,11 @@ export namespace Prisma {
 
   export type ProductMinAggregateInputType = {
     id?: true
-    title?: true
-    description?: true
-    productStatus?: true
+    title_en?: true
+    title_fa?: true
+    description_en?: true
+    description_fa?: true
+    status?: true
     url?: true
     imageId?: true
     createdAt?: true
@@ -2664,9 +2672,11 @@ export namespace Prisma {
 
   export type ProductMaxAggregateInputType = {
     id?: true
-    title?: true
-    description?: true
-    productStatus?: true
+    title_en?: true
+    title_fa?: true
+    description_en?: true
+    description_fa?: true
+    status?: true
     url?: true
     imageId?: true
     createdAt?: true
@@ -2675,9 +2685,11 @@ export namespace Prisma {
 
   export type ProductCountAggregateInputType = {
     id?: true
-    title?: true
-    description?: true
-    productStatus?: true
+    title_en?: true
+    title_fa?: true
+    description_en?: true
+    description_fa?: true
+    status?: true
     url?: true
     imageId?: true
     createdAt?: true
@@ -2773,9 +2785,11 @@ export namespace Prisma {
 
   export type ProductGroupByOutputType = {
     id: number
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     imageId: number | null
     createdAt: Date
@@ -2803,9 +2817,11 @@ export namespace Prisma {
 
   export type ProductSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    title?: boolean
-    description?: boolean
-    productStatus?: boolean
+    title_en?: boolean
+    title_fa?: boolean
+    description_en?: boolean
+    description_fa?: boolean
+    status?: boolean
     url?: boolean
     imageId?: boolean
     createdAt?: boolean
@@ -2819,9 +2835,11 @@ export namespace Prisma {
 
   export type ProductSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    title?: boolean
-    description?: boolean
-    productStatus?: boolean
+    title_en?: boolean
+    title_fa?: boolean
+    description_en?: boolean
+    description_fa?: boolean
+    status?: boolean
     url?: boolean
     imageId?: boolean
     createdAt?: boolean
@@ -2831,9 +2849,11 @@ export namespace Prisma {
 
   export type ProductSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    title?: boolean
-    description?: boolean
-    productStatus?: boolean
+    title_en?: boolean
+    title_fa?: boolean
+    description_en?: boolean
+    description_fa?: boolean
+    status?: boolean
     url?: boolean
     imageId?: boolean
     createdAt?: boolean
@@ -2843,16 +2863,18 @@ export namespace Prisma {
 
   export type ProductSelectScalar = {
     id?: boolean
-    title?: boolean
-    description?: boolean
-    productStatus?: boolean
+    title_en?: boolean
+    title_fa?: boolean
+    description_en?: boolean
+    description_fa?: boolean
+    status?: boolean
     url?: boolean
     imageId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "productStatus" | "url" | "imageId" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title_en" | "title_fa" | "description_en" | "description_fa" | "status" | "url" | "imageId" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
   export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     image?: boolean | Product$imageArgs<ExtArgs>
     galleryImages?: boolean | Product$galleryImagesArgs<ExtArgs>
@@ -2877,9 +2899,11 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      title: string
-      description: string
-      productStatus: $Enums.ProductStatus
+      title_en: string
+      title_fa: string
+      description_en: string
+      description_fa: string
+      status: $Enums.ProductStatus
       url: string
       imageId: number | null
       createdAt: Date
@@ -3312,9 +3336,11 @@ export namespace Prisma {
    */
   interface ProductFieldRefs {
     readonly id: FieldRef<"Product", 'Int'>
-    readonly title: FieldRef<"Product", 'String'>
-    readonly description: FieldRef<"Product", 'String'>
-    readonly productStatus: FieldRef<"Product", 'ProductStatus'>
+    readonly title_en: FieldRef<"Product", 'String'>
+    readonly title_fa: FieldRef<"Product", 'String'>
+    readonly description_en: FieldRef<"Product", 'String'>
+    readonly description_fa: FieldRef<"Product", 'String'>
+    readonly status: FieldRef<"Product", 'ProductStatus'>
     readonly url: FieldRef<"Product", 'String'>
     readonly imageId: FieldRef<"Product", 'Int'>
     readonly createdAt: FieldRef<"Product", 'DateTime'>
@@ -3851,7 +3877,7 @@ export namespace Prisma {
   export type ImageMinAggregateOutputType = {
     id: number | null
     url: string | null
-    publicId: string | null
+    public_id: string | null
     width: number | null
     height: number | null
     format: string | null
@@ -3861,7 +3887,7 @@ export namespace Prisma {
   export type ImageMaxAggregateOutputType = {
     id: number | null
     url: string | null
-    publicId: string | null
+    public_id: string | null
     width: number | null
     height: number | null
     format: string | null
@@ -3871,7 +3897,7 @@ export namespace Prisma {
   export type ImageCountAggregateOutputType = {
     id: number
     url: number
-    publicId: number
+    public_id: number
     width: number
     height: number
     format: number
@@ -3895,7 +3921,7 @@ export namespace Prisma {
   export type ImageMinAggregateInputType = {
     id?: true
     url?: true
-    publicId?: true
+    public_id?: true
     width?: true
     height?: true
     format?: true
@@ -3905,7 +3931,7 @@ export namespace Prisma {
   export type ImageMaxAggregateInputType = {
     id?: true
     url?: true
-    publicId?: true
+    public_id?: true
     width?: true
     height?: true
     format?: true
@@ -3915,7 +3941,7 @@ export namespace Prisma {
   export type ImageCountAggregateInputType = {
     id?: true
     url?: true
-    publicId?: true
+    public_id?: true
     width?: true
     height?: true
     format?: true
@@ -4012,7 +4038,7 @@ export namespace Prisma {
   export type ImageGroupByOutputType = {
     id: number
     url: string
-    publicId: string
+    public_id: string
     width: number | null
     height: number | null
     format: string | null
@@ -4041,7 +4067,7 @@ export namespace Prisma {
   export type ImageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     url?: boolean
-    publicId?: boolean
+    public_id?: boolean
     width?: boolean
     height?: boolean
     format?: boolean
@@ -4054,7 +4080,7 @@ export namespace Prisma {
   export type ImageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     url?: boolean
-    publicId?: boolean
+    public_id?: boolean
     width?: boolean
     height?: boolean
     format?: boolean
@@ -4064,7 +4090,7 @@ export namespace Prisma {
   export type ImageSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     url?: boolean
-    publicId?: boolean
+    public_id?: boolean
     width?: boolean
     height?: boolean
     format?: boolean
@@ -4074,14 +4100,14 @@ export namespace Prisma {
   export type ImageSelectScalar = {
     id?: boolean
     url?: boolean
-    publicId?: boolean
+    public_id?: boolean
     width?: boolean
     height?: boolean
     format?: boolean
     createdAt?: boolean
   }
 
-  export type ImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "url" | "publicId" | "width" | "height" | "format" | "createdAt", ExtArgs["result"]["image"]>
+  export type ImageOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "url" | "public_id" | "width" | "height" | "format" | "createdAt", ExtArgs["result"]["image"]>
   export type ImageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     product?: boolean | Image$productArgs<ExtArgs>
     gallery?: boolean | Image$galleryArgs<ExtArgs>
@@ -4099,7 +4125,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       url: string
-      publicId: string
+      public_id: string
       width: number | null
       height: number | null
       format: string | null
@@ -4531,7 +4557,7 @@ export namespace Prisma {
   interface ImageFieldRefs {
     readonly id: FieldRef<"Image", 'Int'>
     readonly url: FieldRef<"Image", 'String'>
-    readonly publicId: FieldRef<"Image", 'String'>
+    readonly public_id: FieldRef<"Image", 'String'>
     readonly width: FieldRef<"Image", 'Int'>
     readonly height: FieldRef<"Image", 'Int'>
     readonly format: FieldRef<"Image", 'String'>
@@ -6089,17 +6115,20 @@ export namespace Prisma {
 
   export type CategoryMinAggregateOutputType = {
     id: number | null
-    name: string | null
+    name_en: string | null
+    name_fa: string | null
   }
 
   export type CategoryMaxAggregateOutputType = {
     id: number | null
-    name: string | null
+    name_en: string | null
+    name_fa: string | null
   }
 
   export type CategoryCountAggregateOutputType = {
     id: number
-    name: number
+    name_en: number
+    name_fa: number
     _all: number
   }
 
@@ -6114,17 +6143,20 @@ export namespace Prisma {
 
   export type CategoryMinAggregateInputType = {
     id?: true
-    name?: true
+    name_en?: true
+    name_fa?: true
   }
 
   export type CategoryMaxAggregateInputType = {
     id?: true
-    name?: true
+    name_en?: true
+    name_fa?: true
   }
 
   export type CategoryCountAggregateInputType = {
     id?: true
-    name?: true
+    name_en?: true
+    name_fa?: true
     _all?: true
   }
 
@@ -6216,7 +6248,8 @@ export namespace Prisma {
 
   export type CategoryGroupByOutputType = {
     id: number
-    name: string
+    name_en: string
+    name_fa: string
     _count: CategoryCountAggregateOutputType | null
     _avg: CategoryAvgAggregateOutputType | null
     _sum: CategorySumAggregateOutputType | null
@@ -6240,27 +6273,31 @@ export namespace Prisma {
 
   export type CategorySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    name_en?: boolean
+    name_fa?: boolean
     products?: boolean | Category$productsArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["category"]>
 
   export type CategorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    name_en?: boolean
+    name_fa?: boolean
   }, ExtArgs["result"]["category"]>
 
   export type CategorySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
+    name_en?: boolean
+    name_fa?: boolean
   }, ExtArgs["result"]["category"]>
 
   export type CategorySelectScalar = {
     id?: boolean
-    name?: boolean
+    name_en?: boolean
+    name_fa?: boolean
   }
 
-  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name", ExtArgs["result"]["category"]>
+  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name_en" | "name_fa", ExtArgs["result"]["category"]>
   export type CategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     products?: boolean | Category$productsArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
@@ -6275,7 +6312,8 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      name: string
+      name_en: string
+      name_fa: string
     }, ExtArgs["result"]["category"]>
     composites: {}
   }
@@ -6701,7 +6739,8 @@ export namespace Prisma {
    */
   interface CategoryFieldRefs {
     readonly id: FieldRef<"Category", 'Int'>
-    readonly name: FieldRef<"Category", 'String'>
+    readonly name_en: FieldRef<"Category", 'String'>
+    readonly name_fa: FieldRef<"Category", 'String'>
   }
     
 
@@ -8221,22 +8260,28 @@ export namespace Prisma {
 
   export type QualificationMinAggregateOutputType = {
     id: number | null
-    metric: string | null
-    value: string | null
+    metric_en: string | null
+    metric_fa: string | null
+    value_en: string | null
+    value_fa: string | null
     productId: number | null
   }
 
   export type QualificationMaxAggregateOutputType = {
     id: number | null
-    metric: string | null
-    value: string | null
+    metric_en: string | null
+    metric_fa: string | null
+    value_en: string | null
+    value_fa: string | null
     productId: number | null
   }
 
   export type QualificationCountAggregateOutputType = {
     id: number
-    metric: number
-    value: number
+    metric_en: number
+    metric_fa: number
+    value_en: number
+    value_fa: number
     productId: number
     _all: number
   }
@@ -8254,22 +8299,28 @@ export namespace Prisma {
 
   export type QualificationMinAggregateInputType = {
     id?: true
-    metric?: true
-    value?: true
+    metric_en?: true
+    metric_fa?: true
+    value_en?: true
+    value_fa?: true
     productId?: true
   }
 
   export type QualificationMaxAggregateInputType = {
     id?: true
-    metric?: true
-    value?: true
+    metric_en?: true
+    metric_fa?: true
+    value_en?: true
+    value_fa?: true
     productId?: true
   }
 
   export type QualificationCountAggregateInputType = {
     id?: true
-    metric?: true
-    value?: true
+    metric_en?: true
+    metric_fa?: true
+    value_en?: true
+    value_fa?: true
     productId?: true
     _all?: true
   }
@@ -8362,8 +8413,10 @@ export namespace Prisma {
 
   export type QualificationGroupByOutputType = {
     id: number
-    metric: string
-    value: string
+    metric_en: string
+    metric_fa: string
+    value_en: string
+    value_fa: string
     productId: number
     _count: QualificationCountAggregateOutputType | null
     _avg: QualificationAvgAggregateOutputType | null
@@ -8388,36 +8441,44 @@ export namespace Prisma {
 
   export type QualificationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    metric?: boolean
-    value?: boolean
+    metric_en?: boolean
+    metric_fa?: boolean
+    value_en?: boolean
+    value_fa?: boolean
     productId?: boolean
     product?: boolean | ProductDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["qualification"]>
 
   export type QualificationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    metric?: boolean
-    value?: boolean
+    metric_en?: boolean
+    metric_fa?: boolean
+    value_en?: boolean
+    value_fa?: boolean
     productId?: boolean
     product?: boolean | ProductDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["qualification"]>
 
   export type QualificationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    metric?: boolean
-    value?: boolean
+    metric_en?: boolean
+    metric_fa?: boolean
+    value_en?: boolean
+    value_fa?: boolean
     productId?: boolean
     product?: boolean | ProductDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["qualification"]>
 
   export type QualificationSelectScalar = {
     id?: boolean
-    metric?: boolean
-    value?: boolean
+    metric_en?: boolean
+    metric_fa?: boolean
+    value_en?: boolean
+    value_fa?: boolean
     productId?: boolean
   }
 
-  export type QualificationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "metric" | "value" | "productId", ExtArgs["result"]["qualification"]>
+  export type QualificationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "metric_en" | "metric_fa" | "value_en" | "value_fa" | "productId", ExtArgs["result"]["qualification"]>
   export type QualificationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     product?: boolean | ProductDefaultArgs<ExtArgs>
   }
@@ -8435,8 +8496,10 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      metric: string
-      value: string
+      metric_en: string
+      metric_fa: string
+      value_en: string
+      value_fa: string
       productId: number
     }, ExtArgs["result"]["qualification"]>
     composites: {}
@@ -8863,8 +8926,10 @@ export namespace Prisma {
    */
   interface QualificationFieldRefs {
     readonly id: FieldRef<"Qualification", 'Int'>
-    readonly metric: FieldRef<"Qualification", 'String'>
-    readonly value: FieldRef<"Qualification", 'String'>
+    readonly metric_en: FieldRef<"Qualification", 'String'>
+    readonly metric_fa: FieldRef<"Qualification", 'String'>
+    readonly value_en: FieldRef<"Qualification", 'String'>
+    readonly value_fa: FieldRef<"Qualification", 'String'>
     readonly productId: FieldRef<"Qualification", 'Int'>
   }
     
@@ -9308,9 +9373,11 @@ export namespace Prisma {
 
   export const ProductScalarFieldEnum: {
     id: 'id',
-    title: 'title',
-    description: 'description',
-    productStatus: 'productStatus',
+    title_en: 'title_en',
+    title_fa: 'title_fa',
+    description_en: 'description_en',
+    description_fa: 'description_fa',
+    status: 'status',
     url: 'url',
     imageId: 'imageId',
     createdAt: 'createdAt',
@@ -9323,7 +9390,7 @@ export namespace Prisma {
   export const ImageScalarFieldEnum: {
     id: 'id',
     url: 'url',
-    publicId: 'publicId',
+    public_id: 'public_id',
     width: 'width',
     height: 'height',
     format: 'format',
@@ -9344,7 +9411,8 @@ export namespace Prisma {
 
   export const CategoryScalarFieldEnum: {
     id: 'id',
-    name: 'name'
+    name_en: 'name_en',
+    name_fa: 'name_fa'
   };
 
   export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
@@ -9360,8 +9428,10 @@ export namespace Prisma {
 
   export const QualificationScalarFieldEnum: {
     id: 'id',
-    metric: 'metric',
-    value: 'value',
+    metric_en: 'metric_en',
+    metric_fa: 'metric_fa',
+    value_en: 'value_en',
+    value_fa: 'value_fa',
     productId: 'productId'
   };
 
@@ -9534,9 +9604,11 @@ export namespace Prisma {
     OR?: ProductWhereInput[]
     NOT?: ProductWhereInput | ProductWhereInput[]
     id?: IntFilter<"Product"> | number
-    title?: StringFilter<"Product"> | string
-    description?: StringFilter<"Product"> | string
-    productStatus?: EnumProductStatusFilter<"Product"> | $Enums.ProductStatus
+    title_en?: StringFilter<"Product"> | string
+    title_fa?: StringFilter<"Product"> | string
+    description_en?: StringFilter<"Product"> | string
+    description_fa?: StringFilter<"Product"> | string
+    status?: EnumProductStatusFilter<"Product"> | $Enums.ProductStatus
     url?: StringFilter<"Product"> | string
     imageId?: IntNullableFilter<"Product"> | number | null
     createdAt?: DateTimeFilter<"Product"> | Date | string
@@ -9549,9 +9621,11 @@ export namespace Prisma {
 
   export type ProductOrderByWithRelationInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    productStatus?: SortOrder
+    title_en?: SortOrder
+    title_fa?: SortOrder
+    description_en?: SortOrder
+    description_fa?: SortOrder
+    status?: SortOrder
     url?: SortOrder
     imageId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -9568,9 +9642,11 @@ export namespace Prisma {
     AND?: ProductWhereInput | ProductWhereInput[]
     OR?: ProductWhereInput[]
     NOT?: ProductWhereInput | ProductWhereInput[]
-    title?: StringFilter<"Product"> | string
-    description?: StringFilter<"Product"> | string
-    productStatus?: EnumProductStatusFilter<"Product"> | $Enums.ProductStatus
+    title_en?: StringFilter<"Product"> | string
+    title_fa?: StringFilter<"Product"> | string
+    description_en?: StringFilter<"Product"> | string
+    description_fa?: StringFilter<"Product"> | string
+    status?: EnumProductStatusFilter<"Product"> | $Enums.ProductStatus
     url?: StringFilter<"Product"> | string
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
@@ -9582,9 +9658,11 @@ export namespace Prisma {
 
   export type ProductOrderByWithAggregationInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    productStatus?: SortOrder
+    title_en?: SortOrder
+    title_fa?: SortOrder
+    description_en?: SortOrder
+    description_fa?: SortOrder
+    status?: SortOrder
     url?: SortOrder
     imageId?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -9601,9 +9679,11 @@ export namespace Prisma {
     OR?: ProductScalarWhereWithAggregatesInput[]
     NOT?: ProductScalarWhereWithAggregatesInput | ProductScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Product"> | number
-    title?: StringWithAggregatesFilter<"Product"> | string
-    description?: StringWithAggregatesFilter<"Product"> | string
-    productStatus?: EnumProductStatusWithAggregatesFilter<"Product"> | $Enums.ProductStatus
+    title_en?: StringWithAggregatesFilter<"Product"> | string
+    title_fa?: StringWithAggregatesFilter<"Product"> | string
+    description_en?: StringWithAggregatesFilter<"Product"> | string
+    description_fa?: StringWithAggregatesFilter<"Product"> | string
+    status?: EnumProductStatusWithAggregatesFilter<"Product"> | $Enums.ProductStatus
     url?: StringWithAggregatesFilter<"Product"> | string
     imageId?: IntNullableWithAggregatesFilter<"Product"> | number | null
     createdAt?: DateTimeWithAggregatesFilter<"Product"> | Date | string
@@ -9616,7 +9696,7 @@ export namespace Prisma {
     NOT?: ImageWhereInput | ImageWhereInput[]
     id?: IntFilter<"Image"> | number
     url?: StringFilter<"Image"> | string
-    publicId?: StringFilter<"Image"> | string
+    public_id?: StringFilter<"Image"> | string
     width?: IntNullableFilter<"Image"> | number | null
     height?: IntNullableFilter<"Image"> | number | null
     format?: StringNullableFilter<"Image"> | string | null
@@ -9628,7 +9708,7 @@ export namespace Prisma {
   export type ImageOrderByWithRelationInput = {
     id?: SortOrder
     url?: SortOrder
-    publicId?: SortOrder
+    public_id?: SortOrder
     width?: SortOrderInput | SortOrder
     height?: SortOrderInput | SortOrder
     format?: SortOrderInput | SortOrder
@@ -9639,23 +9719,23 @@ export namespace Prisma {
 
   export type ImageWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    public_id?: string
     AND?: ImageWhereInput | ImageWhereInput[]
     OR?: ImageWhereInput[]
     NOT?: ImageWhereInput | ImageWhereInput[]
     url?: StringFilter<"Image"> | string
-    publicId?: StringFilter<"Image"> | string
     width?: IntNullableFilter<"Image"> | number | null
     height?: IntNullableFilter<"Image"> | number | null
     format?: StringNullableFilter<"Image"> | string | null
     createdAt?: DateTimeFilter<"Image"> | Date | string
     product?: XOR<ProductNullableScalarRelationFilter, ProductWhereInput> | null
     gallery?: ProductGalleryListRelationFilter
-  }, "id">
+  }, "id" | "public_id">
 
   export type ImageOrderByWithAggregationInput = {
     id?: SortOrder
     url?: SortOrder
-    publicId?: SortOrder
+    public_id?: SortOrder
     width?: SortOrderInput | SortOrder
     height?: SortOrderInput | SortOrder
     format?: SortOrderInput | SortOrder
@@ -9673,7 +9753,7 @@ export namespace Prisma {
     NOT?: ImageScalarWhereWithAggregatesInput | ImageScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Image"> | number
     url?: StringWithAggregatesFilter<"Image"> | string
-    publicId?: StringWithAggregatesFilter<"Image"> | string
+    public_id?: StringWithAggregatesFilter<"Image"> | string
     width?: IntNullableWithAggregatesFilter<"Image"> | number | null
     height?: IntNullableWithAggregatesFilter<"Image"> | number | null
     format?: StringNullableWithAggregatesFilter<"Image"> | string | null
@@ -9735,28 +9815,32 @@ export namespace Prisma {
     OR?: CategoryWhereInput[]
     NOT?: CategoryWhereInput | CategoryWhereInput[]
     id?: IntFilter<"Category"> | number
-    name?: StringFilter<"Category"> | string
+    name_en?: StringFilter<"Category"> | string
+    name_fa?: StringFilter<"Category"> | string
     products?: ProductCategoryListRelationFilter
   }
 
   export type CategoryOrderByWithRelationInput = {
     id?: SortOrder
-    name?: SortOrder
+    name_en?: SortOrder
+    name_fa?: SortOrder
     products?: ProductCategoryOrderByRelationAggregateInput
   }
 
   export type CategoryWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    name?: string
+    name_en?: string
+    name_fa?: string
     AND?: CategoryWhereInput | CategoryWhereInput[]
     OR?: CategoryWhereInput[]
     NOT?: CategoryWhereInput | CategoryWhereInput[]
     products?: ProductCategoryListRelationFilter
-  }, "id" | "name">
+  }, "id" | "name_en" | "name_fa">
 
   export type CategoryOrderByWithAggregationInput = {
     id?: SortOrder
-    name?: SortOrder
+    name_en?: SortOrder
+    name_fa?: SortOrder
     _count?: CategoryCountOrderByAggregateInput
     _avg?: CategoryAvgOrderByAggregateInput
     _max?: CategoryMaxOrderByAggregateInput
@@ -9769,7 +9853,8 @@ export namespace Prisma {
     OR?: CategoryScalarWhereWithAggregatesInput[]
     NOT?: CategoryScalarWhereWithAggregatesInput | CategoryScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Category"> | number
-    name?: StringWithAggregatesFilter<"Category"> | string
+    name_en?: StringWithAggregatesFilter<"Category"> | string
+    name_fa?: StringWithAggregatesFilter<"Category"> | string
   }
 
   export type ProductCategoryWhereInput = {
@@ -9823,16 +9908,20 @@ export namespace Prisma {
     OR?: QualificationWhereInput[]
     NOT?: QualificationWhereInput | QualificationWhereInput[]
     id?: IntFilter<"Qualification"> | number
-    metric?: StringFilter<"Qualification"> | string
-    value?: StringFilter<"Qualification"> | string
+    metric_en?: StringFilter<"Qualification"> | string
+    metric_fa?: StringFilter<"Qualification"> | string
+    value_en?: StringFilter<"Qualification"> | string
+    value_fa?: StringFilter<"Qualification"> | string
     productId?: IntFilter<"Qualification"> | number
     product?: XOR<ProductScalarRelationFilter, ProductWhereInput>
   }
 
   export type QualificationOrderByWithRelationInput = {
     id?: SortOrder
-    metric?: SortOrder
-    value?: SortOrder
+    metric_en?: SortOrder
+    metric_fa?: SortOrder
+    value_en?: SortOrder
+    value_fa?: SortOrder
     productId?: SortOrder
     product?: ProductOrderByWithRelationInput
   }
@@ -9842,16 +9931,20 @@ export namespace Prisma {
     AND?: QualificationWhereInput | QualificationWhereInput[]
     OR?: QualificationWhereInput[]
     NOT?: QualificationWhereInput | QualificationWhereInput[]
-    metric?: StringFilter<"Qualification"> | string
-    value?: StringFilter<"Qualification"> | string
+    metric_en?: StringFilter<"Qualification"> | string
+    metric_fa?: StringFilter<"Qualification"> | string
+    value_en?: StringFilter<"Qualification"> | string
+    value_fa?: StringFilter<"Qualification"> | string
     productId?: IntFilter<"Qualification"> | number
     product?: XOR<ProductScalarRelationFilter, ProductWhereInput>
   }, "id">
 
   export type QualificationOrderByWithAggregationInput = {
     id?: SortOrder
-    metric?: SortOrder
-    value?: SortOrder
+    metric_en?: SortOrder
+    metric_fa?: SortOrder
+    value_en?: SortOrder
+    value_fa?: SortOrder
     productId?: SortOrder
     _count?: QualificationCountOrderByAggregateInput
     _avg?: QualificationAvgOrderByAggregateInput
@@ -9865,8 +9958,10 @@ export namespace Prisma {
     OR?: QualificationScalarWhereWithAggregatesInput[]
     NOT?: QualificationScalarWhereWithAggregatesInput | QualificationScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Qualification"> | number
-    metric?: StringWithAggregatesFilter<"Qualification"> | string
-    value?: StringWithAggregatesFilter<"Qualification"> | string
+    metric_en?: StringWithAggregatesFilter<"Qualification"> | string
+    metric_fa?: StringWithAggregatesFilter<"Qualification"> | string
+    value_en?: StringWithAggregatesFilter<"Qualification"> | string
+    value_fa?: StringWithAggregatesFilter<"Qualification"> | string
     productId?: IntWithAggregatesFilter<"Qualification"> | number
   }
 
@@ -9931,9 +10026,11 @@ export namespace Prisma {
   }
 
   export type ProductCreateInput = {
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -9945,9 +10042,11 @@ export namespace Prisma {
 
   export type ProductUncheckedCreateInput = {
     id?: number
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     imageId?: number | null
     createdAt?: Date | string
@@ -9958,9 +10057,11 @@ export namespace Prisma {
   }
 
   export type ProductUpdateInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9972,9 +10073,11 @@ export namespace Prisma {
 
   export type ProductUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -9986,9 +10089,11 @@ export namespace Prisma {
 
   export type ProductCreateManyInput = {
     id?: number
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     imageId?: number | null
     createdAt?: Date | string
@@ -9996,9 +10101,11 @@ export namespace Prisma {
   }
 
   export type ProductUpdateManyMutationInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10006,9 +10113,11 @@ export namespace Prisma {
 
   export type ProductUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10017,7 +10126,7 @@ export namespace Prisma {
 
   export type ImageCreateInput = {
     url: string
-    publicId: string
+    public_id: string
     width?: number | null
     height?: number | null
     format?: string | null
@@ -10029,7 +10138,7 @@ export namespace Prisma {
   export type ImageUncheckedCreateInput = {
     id?: number
     url: string
-    publicId: string
+    public_id: string
     width?: number | null
     height?: number | null
     format?: string | null
@@ -10040,7 +10149,7 @@ export namespace Prisma {
 
   export type ImageUpdateInput = {
     url?: StringFieldUpdateOperationsInput | string
-    publicId?: StringFieldUpdateOperationsInput | string
+    public_id?: StringFieldUpdateOperationsInput | string
     width?: NullableIntFieldUpdateOperationsInput | number | null
     height?: NullableIntFieldUpdateOperationsInput | number | null
     format?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10052,7 +10161,7 @@ export namespace Prisma {
   export type ImageUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
-    publicId?: StringFieldUpdateOperationsInput | string
+    public_id?: StringFieldUpdateOperationsInput | string
     width?: NullableIntFieldUpdateOperationsInput | number | null
     height?: NullableIntFieldUpdateOperationsInput | number | null
     format?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10064,7 +10173,7 @@ export namespace Prisma {
   export type ImageCreateManyInput = {
     id?: number
     url: string
-    publicId: string
+    public_id: string
     width?: number | null
     height?: number | null
     format?: string | null
@@ -10073,7 +10182,7 @@ export namespace Prisma {
 
   export type ImageUpdateManyMutationInput = {
     url?: StringFieldUpdateOperationsInput | string
-    publicId?: StringFieldUpdateOperationsInput | string
+    public_id?: StringFieldUpdateOperationsInput | string
     width?: NullableIntFieldUpdateOperationsInput | number | null
     height?: NullableIntFieldUpdateOperationsInput | number | null
     format?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10083,7 +10192,7 @@ export namespace Prisma {
   export type ImageUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
-    publicId?: StringFieldUpdateOperationsInput | string
+    public_id?: StringFieldUpdateOperationsInput | string
     width?: NullableIntFieldUpdateOperationsInput | number | null
     height?: NullableIntFieldUpdateOperationsInput | number | null
     format?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10129,39 +10238,46 @@ export namespace Prisma {
   }
 
   export type CategoryCreateInput = {
-    name: string
+    name_en: string
+    name_fa: string
     products?: ProductCategoryCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUncheckedCreateInput = {
     id?: number
-    name: string
+    name_en: string
+    name_fa: string
     products?: ProductCategoryUncheckedCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUpdateInput = {
-    name?: StringFieldUpdateOperationsInput | string
+    name_en?: StringFieldUpdateOperationsInput | string
+    name_fa?: StringFieldUpdateOperationsInput | string
     products?: ProductCategoryUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    name_en?: StringFieldUpdateOperationsInput | string
+    name_fa?: StringFieldUpdateOperationsInput | string
     products?: ProductCategoryUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryCreateManyInput = {
     id?: number
-    name: string
+    name_en: string
+    name_fa: string
   }
 
   export type CategoryUpdateManyMutationInput = {
-    name?: StringFieldUpdateOperationsInput | string
+    name_en?: StringFieldUpdateOperationsInput | string
+    name_fa?: StringFieldUpdateOperationsInput | string
   }
 
   export type CategoryUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    name_en?: StringFieldUpdateOperationsInput | string
+    name_fa?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProductCategoryCreateInput = {
@@ -10199,47 +10315,61 @@ export namespace Prisma {
   }
 
   export type QualificationCreateInput = {
-    metric: string
-    value: string
+    metric_en: string
+    metric_fa: string
+    value_en: string
+    value_fa: string
     product: ProductCreateNestedOneWithoutQualificationsInput
   }
 
   export type QualificationUncheckedCreateInput = {
     id?: number
-    metric: string
-    value: string
+    metric_en: string
+    metric_fa: string
+    value_en: string
+    value_fa: string
     productId: number
   }
 
   export type QualificationUpdateInput = {
-    metric?: StringFieldUpdateOperationsInput | string
-    value?: StringFieldUpdateOperationsInput | string
+    metric_en?: StringFieldUpdateOperationsInput | string
+    metric_fa?: StringFieldUpdateOperationsInput | string
+    value_en?: StringFieldUpdateOperationsInput | string
+    value_fa?: StringFieldUpdateOperationsInput | string
     product?: ProductUpdateOneRequiredWithoutQualificationsNestedInput
   }
 
   export type QualificationUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    metric?: StringFieldUpdateOperationsInput | string
-    value?: StringFieldUpdateOperationsInput | string
+    metric_en?: StringFieldUpdateOperationsInput | string
+    metric_fa?: StringFieldUpdateOperationsInput | string
+    value_en?: StringFieldUpdateOperationsInput | string
+    value_fa?: StringFieldUpdateOperationsInput | string
     productId?: IntFieldUpdateOperationsInput | number
   }
 
   export type QualificationCreateManyInput = {
     id?: number
-    metric: string
-    value: string
+    metric_en: string
+    metric_fa: string
+    value_en: string
+    value_fa: string
     productId: number
   }
 
   export type QualificationUpdateManyMutationInput = {
-    metric?: StringFieldUpdateOperationsInput | string
-    value?: StringFieldUpdateOperationsInput | string
+    metric_en?: StringFieldUpdateOperationsInput | string
+    metric_fa?: StringFieldUpdateOperationsInput | string
+    value_en?: StringFieldUpdateOperationsInput | string
+    value_fa?: StringFieldUpdateOperationsInput | string
   }
 
   export type QualificationUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    metric?: StringFieldUpdateOperationsInput | string
-    value?: StringFieldUpdateOperationsInput | string
+    metric_en?: StringFieldUpdateOperationsInput | string
+    metric_fa?: StringFieldUpdateOperationsInput | string
+    value_en?: StringFieldUpdateOperationsInput | string
+    value_fa?: StringFieldUpdateOperationsInput | string
     productId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -10423,9 +10553,11 @@ export namespace Prisma {
 
   export type ProductCountOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    productStatus?: SortOrder
+    title_en?: SortOrder
+    title_fa?: SortOrder
+    description_en?: SortOrder
+    description_fa?: SortOrder
+    status?: SortOrder
     url?: SortOrder
     imageId?: SortOrder
     createdAt?: SortOrder
@@ -10439,9 +10571,11 @@ export namespace Prisma {
 
   export type ProductMaxOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    productStatus?: SortOrder
+    title_en?: SortOrder
+    title_fa?: SortOrder
+    description_en?: SortOrder
+    description_fa?: SortOrder
+    status?: SortOrder
     url?: SortOrder
     imageId?: SortOrder
     createdAt?: SortOrder
@@ -10450,9 +10584,11 @@ export namespace Prisma {
 
   export type ProductMinOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    productStatus?: SortOrder
+    title_en?: SortOrder
+    title_fa?: SortOrder
+    description_en?: SortOrder
+    description_fa?: SortOrder
+    status?: SortOrder
     url?: SortOrder
     imageId?: SortOrder
     createdAt?: SortOrder
@@ -10513,7 +10649,7 @@ export namespace Prisma {
   export type ImageCountOrderByAggregateInput = {
     id?: SortOrder
     url?: SortOrder
-    publicId?: SortOrder
+    public_id?: SortOrder
     width?: SortOrder
     height?: SortOrder
     format?: SortOrder
@@ -10529,7 +10665,7 @@ export namespace Prisma {
   export type ImageMaxOrderByAggregateInput = {
     id?: SortOrder
     url?: SortOrder
-    publicId?: SortOrder
+    public_id?: SortOrder
     width?: SortOrder
     height?: SortOrder
     format?: SortOrder
@@ -10539,7 +10675,7 @@ export namespace Prisma {
   export type ImageMinOrderByAggregateInput = {
     id?: SortOrder
     url?: SortOrder
-    publicId?: SortOrder
+    public_id?: SortOrder
     width?: SortOrder
     height?: SortOrder
     format?: SortOrder
@@ -10612,7 +10748,8 @@ export namespace Prisma {
 
   export type CategoryCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    name_en?: SortOrder
+    name_fa?: SortOrder
   }
 
   export type CategoryAvgOrderByAggregateInput = {
@@ -10621,12 +10758,14 @@ export namespace Prisma {
 
   export type CategoryMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    name_en?: SortOrder
+    name_fa?: SortOrder
   }
 
   export type CategoryMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
+    name_en?: SortOrder
+    name_fa?: SortOrder
   }
 
   export type CategorySumOrderByAggregateInput = {
@@ -10670,8 +10809,10 @@ export namespace Prisma {
 
   export type QualificationCountOrderByAggregateInput = {
     id?: SortOrder
-    metric?: SortOrder
-    value?: SortOrder
+    metric_en?: SortOrder
+    metric_fa?: SortOrder
+    value_en?: SortOrder
+    value_fa?: SortOrder
     productId?: SortOrder
   }
 
@@ -10682,15 +10823,19 @@ export namespace Prisma {
 
   export type QualificationMaxOrderByAggregateInput = {
     id?: SortOrder
-    metric?: SortOrder
-    value?: SortOrder
+    metric_en?: SortOrder
+    metric_fa?: SortOrder
+    value_en?: SortOrder
+    value_fa?: SortOrder
     productId?: SortOrder
   }
 
   export type QualificationMinOrderByAggregateInput = {
     id?: SortOrder
-    metric?: SortOrder
-    value?: SortOrder
+    metric_en?: SortOrder
+    metric_fa?: SortOrder
+    value_en?: SortOrder
+    value_fa?: SortOrder
     productId?: SortOrder
   }
 
@@ -11241,7 +11386,7 @@ export namespace Prisma {
 
   export type ImageCreateWithoutProductInput = {
     url: string
-    publicId: string
+    public_id: string
     width?: number | null
     height?: number | null
     format?: string | null
@@ -11252,7 +11397,7 @@ export namespace Prisma {
   export type ImageUncheckedCreateWithoutProductInput = {
     id?: number
     url: string
-    publicId: string
+    public_id: string
     width?: number | null
     height?: number | null
     format?: string | null
@@ -11303,14 +11448,18 @@ export namespace Prisma {
   }
 
   export type QualificationCreateWithoutProductInput = {
-    metric: string
-    value: string
+    metric_en: string
+    metric_fa: string
+    value_en: string
+    value_fa: string
   }
 
   export type QualificationUncheckedCreateWithoutProductInput = {
     id?: number
-    metric: string
-    value: string
+    metric_en: string
+    metric_fa: string
+    value_en: string
+    value_fa: string
   }
 
   export type QualificationCreateOrConnectWithoutProductInput = {
@@ -11336,7 +11485,7 @@ export namespace Prisma {
 
   export type ImageUpdateWithoutProductInput = {
     url?: StringFieldUpdateOperationsInput | string
-    publicId?: StringFieldUpdateOperationsInput | string
+    public_id?: StringFieldUpdateOperationsInput | string
     width?: NullableIntFieldUpdateOperationsInput | number | null
     height?: NullableIntFieldUpdateOperationsInput | number | null
     format?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11347,7 +11496,7 @@ export namespace Prisma {
   export type ImageUncheckedUpdateWithoutProductInput = {
     id?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
-    publicId?: StringFieldUpdateOperationsInput | string
+    public_id?: StringFieldUpdateOperationsInput | string
     width?: NullableIntFieldUpdateOperationsInput | number | null
     height?: NullableIntFieldUpdateOperationsInput | number | null
     format?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11425,15 +11574,19 @@ export namespace Prisma {
     OR?: QualificationScalarWhereInput[]
     NOT?: QualificationScalarWhereInput | QualificationScalarWhereInput[]
     id?: IntFilter<"Qualification"> | number
-    metric?: StringFilter<"Qualification"> | string
-    value?: StringFilter<"Qualification"> | string
+    metric_en?: StringFilter<"Qualification"> | string
+    metric_fa?: StringFilter<"Qualification"> | string
+    value_en?: StringFilter<"Qualification"> | string
+    value_fa?: StringFilter<"Qualification"> | string
     productId?: IntFilter<"Qualification"> | number
   }
 
   export type ProductCreateWithoutImageInput = {
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -11444,9 +11597,11 @@ export namespace Prisma {
 
   export type ProductUncheckedCreateWithoutImageInput = {
     id?: number
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -11491,9 +11646,11 @@ export namespace Prisma {
   }
 
   export type ProductUpdateWithoutImageInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11504,9 +11661,11 @@ export namespace Prisma {
 
   export type ProductUncheckedUpdateWithoutImageInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11532,9 +11691,11 @@ export namespace Prisma {
   }
 
   export type ProductCreateWithoutGalleryImagesInput = {
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -11545,9 +11706,11 @@ export namespace Prisma {
 
   export type ProductUncheckedCreateWithoutGalleryImagesInput = {
     id?: number
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     imageId?: number | null
     createdAt?: Date | string
@@ -11563,7 +11726,7 @@ export namespace Prisma {
 
   export type ImageCreateWithoutGalleryInput = {
     url: string
-    publicId: string
+    public_id: string
     width?: number | null
     height?: number | null
     format?: string | null
@@ -11574,7 +11737,7 @@ export namespace Prisma {
   export type ImageUncheckedCreateWithoutGalleryInput = {
     id?: number
     url: string
-    publicId: string
+    public_id: string
     width?: number | null
     height?: number | null
     format?: string | null
@@ -11599,9 +11762,11 @@ export namespace Prisma {
   }
 
   export type ProductUpdateWithoutGalleryImagesInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11612,9 +11777,11 @@ export namespace Prisma {
 
   export type ProductUncheckedUpdateWithoutGalleryImagesInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11636,7 +11803,7 @@ export namespace Prisma {
 
   export type ImageUpdateWithoutGalleryInput = {
     url?: StringFieldUpdateOperationsInput | string
-    publicId?: StringFieldUpdateOperationsInput | string
+    public_id?: StringFieldUpdateOperationsInput | string
     width?: NullableIntFieldUpdateOperationsInput | number | null
     height?: NullableIntFieldUpdateOperationsInput | number | null
     format?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11647,7 +11814,7 @@ export namespace Prisma {
   export type ImageUncheckedUpdateWithoutGalleryInput = {
     id?: IntFieldUpdateOperationsInput | number
     url?: StringFieldUpdateOperationsInput | string
-    publicId?: StringFieldUpdateOperationsInput | string
+    public_id?: StringFieldUpdateOperationsInput | string
     width?: NullableIntFieldUpdateOperationsInput | number | null
     height?: NullableIntFieldUpdateOperationsInput | number | null
     format?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11690,9 +11857,11 @@ export namespace Prisma {
   }
 
   export type ProductCreateWithoutCategoriesInput = {
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -11703,9 +11872,11 @@ export namespace Prisma {
 
   export type ProductUncheckedCreateWithoutCategoriesInput = {
     id?: number
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     imageId?: number | null
     createdAt?: Date | string
@@ -11720,12 +11891,14 @@ export namespace Prisma {
   }
 
   export type CategoryCreateWithoutProductsInput = {
-    name: string
+    name_en: string
+    name_fa: string
   }
 
   export type CategoryUncheckedCreateWithoutProductsInput = {
     id?: number
-    name: string
+    name_en: string
+    name_fa: string
   }
 
   export type CategoryCreateOrConnectWithoutProductsInput = {
@@ -11745,9 +11918,11 @@ export namespace Prisma {
   }
 
   export type ProductUpdateWithoutCategoriesInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11758,9 +11933,11 @@ export namespace Prisma {
 
   export type ProductUncheckedUpdateWithoutCategoriesInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11781,18 +11958,22 @@ export namespace Prisma {
   }
 
   export type CategoryUpdateWithoutProductsInput = {
-    name?: StringFieldUpdateOperationsInput | string
+    name_en?: StringFieldUpdateOperationsInput | string
+    name_fa?: StringFieldUpdateOperationsInput | string
   }
 
   export type CategoryUncheckedUpdateWithoutProductsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    name?: StringFieldUpdateOperationsInput | string
+    name_en?: StringFieldUpdateOperationsInput | string
+    name_fa?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProductCreateWithoutQualificationsInput = {
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -11803,9 +11984,11 @@ export namespace Prisma {
 
   export type ProductUncheckedCreateWithoutQualificationsInput = {
     id?: number
-    title: string
-    description: string
-    productStatus: $Enums.ProductStatus
+    title_en: string
+    title_fa: string
+    description_en: string
+    description_fa: string
+    status: $Enums.ProductStatus
     url: string
     imageId?: number | null
     createdAt?: Date | string
@@ -11831,9 +12014,11 @@ export namespace Prisma {
   }
 
   export type ProductUpdateWithoutQualificationsInput = {
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11844,9 +12029,11 @@ export namespace Prisma {
 
   export type ProductUncheckedUpdateWithoutQualificationsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    title?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    productStatus?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
+    title_en?: StringFieldUpdateOperationsInput | string
+    title_fa?: StringFieldUpdateOperationsInput | string
+    description_en?: StringFieldUpdateOperationsInput | string
+    description_fa?: StringFieldUpdateOperationsInput | string
+    status?: EnumProductStatusFieldUpdateOperationsInput | $Enums.ProductStatus
     url?: StringFieldUpdateOperationsInput | string
     imageId?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11866,8 +12053,10 @@ export namespace Prisma {
 
   export type QualificationCreateManyProductInput = {
     id?: number
-    metric: string
-    value: string
+    metric_en: string
+    metric_fa: string
+    value_en: string
+    value_fa: string
   }
 
   export type ProductGalleryUpdateWithoutProductInput = {
@@ -11897,20 +12086,26 @@ export namespace Prisma {
   }
 
   export type QualificationUpdateWithoutProductInput = {
-    metric?: StringFieldUpdateOperationsInput | string
-    value?: StringFieldUpdateOperationsInput | string
+    metric_en?: StringFieldUpdateOperationsInput | string
+    metric_fa?: StringFieldUpdateOperationsInput | string
+    value_en?: StringFieldUpdateOperationsInput | string
+    value_fa?: StringFieldUpdateOperationsInput | string
   }
 
   export type QualificationUncheckedUpdateWithoutProductInput = {
     id?: IntFieldUpdateOperationsInput | number
-    metric?: StringFieldUpdateOperationsInput | string
-    value?: StringFieldUpdateOperationsInput | string
+    metric_en?: StringFieldUpdateOperationsInput | string
+    metric_fa?: StringFieldUpdateOperationsInput | string
+    value_en?: StringFieldUpdateOperationsInput | string
+    value_fa?: StringFieldUpdateOperationsInput | string
   }
 
   export type QualificationUncheckedUpdateManyWithoutProductInput = {
     id?: IntFieldUpdateOperationsInput | number
-    metric?: StringFieldUpdateOperationsInput | string
-    value?: StringFieldUpdateOperationsInput | string
+    metric_en?: StringFieldUpdateOperationsInput | string
+    metric_fa?: StringFieldUpdateOperationsInput | string
+    value_en?: StringFieldUpdateOperationsInput | string
+    value_fa?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProductGalleryCreateManyImageInput = {
