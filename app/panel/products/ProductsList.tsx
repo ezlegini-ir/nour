@@ -59,7 +59,7 @@ const renderRows = (product: ProductType) => {
             height={65}
             className="rounded-sm aspect-square object-cover hidden lg:block bg-muted"
           />
-          <span dir="rtl">{product.title}</span>
+          <span dir="rtl">{product.title_en}</span>
         </Link>
       </TableCell>
       <TableCell className="text-center hidden xl:table-cell">hi</TableCell>
@@ -74,7 +74,7 @@ const renderRows = (product: ProductType) => {
       <TableCell className="text-center" dir="rtl">
         {product.categories &&
           product.categories
-            .map((item) => item.category.name)
+            .map((item) => item.category.name_en)
             .slice(0, 2)
             .join(", ") +
             (product.categories.length > 2

@@ -33,7 +33,7 @@ const CategoryForm = ({ type, category }: Props) => {
     resolver: zodResolver(categoryFormSchema),
     mode: "onSubmit",
     defaultValues: {
-      name: category?.name || "",
+      name: category?.name_en || "",
     },
   });
 

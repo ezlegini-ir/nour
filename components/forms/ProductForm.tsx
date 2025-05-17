@@ -61,9 +61,9 @@ const ProductForm = ({ type, product, categories }: Props) => {
   const form = useForm<ProductFormType>({
     resolver: zodResolver(productFormSchema),
     defaultValues: {
-      title: product?.title || "",
+      title: product?.title_en || "",
       url: product?.url || "",
-      description: product?.description || "",
+      description: product?.description_en || "",
       status: product?.status ? (product?.status === "DRAFT" ? "0" : "1") : "0",
       categories:
         product?.categories?.map((c) => c.category.id.toString()) || [],
@@ -281,7 +281,7 @@ const ProductForm = ({ type, product, categories }: Props) => {
                           />
                         </FormControl>
                         <FormLabel className="text-sm font-normal cursor-pointer">
-                          {item.name}
+                          {item.name_en}
                         </FormLabel>
                       </FormItem>
                     );
