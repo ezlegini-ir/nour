@@ -16,17 +16,28 @@ export type LoginFormType = z.infer<typeof loginFormSchema>;
 
 //! POSTS
 export const productFormSchema = z.object({
-  title: z.string().min(1),
+  titleEN: z.string().min(1),
+  titleFA: z.string().min(1),
   url: z.string().min(1).trim(),
   image,
-  description: z.string().min(1),
+  descriptionEN: z.string().min(1),
+  descriptionFA: z.string().min(1),
   categories: z.array(z.string()),
   status: z.enum(status),
+  qualifications: z.array(
+    z.object({
+      metricEN: z.string().min(1),
+      metricFA: z.string().min(1),
+      valueEN: z.string().min(1),
+      valueFA: z.string().min(1),
+    })
+  ),
 });
 export type ProductFormType = z.infer<typeof productFormSchema>;
 
 //! CATEGORIES
 export const categoryFormSchema = z.object({
-  name: z.string().min(1),
+  nameEN: z.string().min(1),
+  nameFA: z.string().min(1),
 });
 export type CategoryFormType = z.infer<typeof categoryFormSchema>;

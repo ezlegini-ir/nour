@@ -9,6 +9,7 @@ import {
   Image as ImageType,
   Product,
   ProductCategory,
+  Qualification,
 } from "@/prisma/generated/prisma";
 import { placeHolder } from "@/public";
 import { formatMiladiDate } from "@/utils/format";
@@ -27,6 +28,7 @@ export interface ProductCategoryType extends ProductCategory {
 export interface ProductType extends Product {
   image: ImageType | null;
   categories: ProductCategoryType[];
+  qualifications: Qualification[];
 }
 
 interface Props {

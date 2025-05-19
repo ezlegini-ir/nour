@@ -48,6 +48,7 @@ const menuItems = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
   { label: "Contact Us", href: "/contact" },
+  { label: "About Us", href: "/about-us" },
 ];
 
 export default NavBar;

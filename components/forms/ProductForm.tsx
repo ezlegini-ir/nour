@@ -32,9 +32,10 @@ import { Category } from "@/prisma/generated/prisma";
 import { useImagePreview } from "@/utils/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import ImageField from "../ImageField";
 import { Textarea } from "../ui/textarea";
+import { Plus, Trash } from "lucide-react";
 
 export interface CategoriesType {
   category: ProductCategoryType;
@@ -61,54 +62,40 @@ const ProductForm = ({ type, product, categories }: Props) => {
   const form = useForm<ProductFormType>({
     resolver: zodResolver(productFormSchema),
     defaultValues: {
-      title: product?.title_en || "",
+      titleEN: product?.title_en || "",
+      titleFA: product?.title_fa || "",
       url: product?.url || "",
-      description: product?.description_en || "",
+      descriptionEN: product?.description_en || "",
+      descriptionFA: product?.description_fa || "",
       status: product?.status ? (product?.status === "DRAFT" ? "0" : "1") : "0",
       categories:
         product?.categories?.map((c) => c.category.id.toString()) || [],
       image: undefined,
+      qualifications: product?.qualifications.length
+        ? product.qualifications.map((qua) => ({
+            metricEN: qua.metric_en,
+            metricFA: qua.metric_fa,
+            valueEN: qua.value_en,
+            valueFA: qua.value_fa,
+          }))
+        : [{ metricEN: "", metricFA: "", valueEN: "", valueFA: "" }],
     },
   });
 
   // onSubmit handles post creation/updating.
   const onSubmit = async (data: ProductFormType) => {
     console.log(data);
-    // setLoading(true);
-    // const res = isUpdateType
-    //   ? await updatePost(updatedData, post?.id!)
-    //   : await createPost(updatedData);
-    // if (res.error) {
-    //   toast.error(res.error);
-    //   setLoading(false);
-    //   return;
-    // }
-    // if (res.success) {
-    //   toast.success(res.success);
-    //   setLoading(false);
-    //   if (isUpdateType) {
-    //     router.refresh();
-    //   } else {
-    //     router.push(`/posts/${res.data?.id}`);
-    //   }
-    // }
   };
 
   const onDelete = async () => {
     setLoading(true);
-
-    // const res = await deletePost(post?.id!);
-
-    // if (res.error) {
-    //   toast.error(res.error);
-    //   setLoading(false);
-    // }
-
-    // if (res.success) {
-    //   toast.success(res.success);
-    //   router.push("/posts/list");
-    // }
   };
+
+  // 🧮 Course Includes Field Array
+  const { fields, append, remove } = useFieldArray({
+    name: "qualifications",
+    control: form.control,
+  });
 
   return (
     <Form {...form}>
@@ -119,10 +106,24 @@ const ProductForm = ({ type, product, categories }: Props) => {
         <div className="col-span-12 md:col-span-9 space-y-4">
           <FormField
             control={form.control}
-            name="title"
+            name="titleEN"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Title</FormLabel>
+                <FormLabel>Title (EN)</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="titleFA"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Title (FA)</FormLabel>
                 <FormControl>
                   <Input dir="rtl" className="text-left" {...field} />
                 </FormControl>
@@ -137,9 +138,9 @@ const ProductForm = ({ type, product, categories }: Props) => {
               name="url"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Url</FormLabel>
+                  <FormLabel>Url (EN)</FormLabel>
                   <FormControl>
-                    <Input dir="rtl" className="text-left" {...field} />
+                    <Input className="text-left" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -159,17 +160,135 @@ const ProductForm = ({ type, product, categories }: Props) => {
 
           <FormField
             control={form.control}
-            name="description"
+            name="descriptionEN"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Description</FormLabel>
+                <FormLabel>Description (EN)</FormLabel>
                 <FormControl>
-                  <Textarea {...field} className="min-h-60" />
+                  <Textarea {...field} className="min-h-40" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+
+          <FormField
+            control={form.control}
+            name="descriptionFA"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Description (FA)</FormLabel>
+                <FormControl>
+                  <Textarea
+                    dir="rtl"
+                    {...field}
+                    className="min-h-40 text-left"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormItem>
+            <FormLabel>Qualifications</FormLabel>
+            <div className="space-y-2 card p-3">
+              {fields.map((field, index) => (
+                <div key={field.id} className="flex gap-2 items-center">
+                  <FormField
+                    control={form.control}
+                    name={`qualifications.${index}.metricEN`}
+                    render={({ field }) => (
+                      <FormItem className="flex gap-1 items-center w-full">
+                        <FormControl>
+                          <Input
+                            placeholder={`Metric EN - ${index + 1}`}
+                            {...field}
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name={`qualifications.${index}.valueEN`}
+                    render={({ field }) => (
+                      <FormItem className="flex gap-1 items-center w-full">
+                        <FormControl>
+                          <Input
+                            placeholder={`Value EN - ${index + 1}`}
+                            {...field}
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+
+                  <div>|||</div>
+
+                  <FormField
+                    control={form.control}
+                    name={`qualifications.${index}.metricFA`}
+                    render={({ field }) => (
+                      <FormItem className="flex gap-1 items-center w-full">
+                        <FormControl>
+                          <Input
+                            placeholder={`Metric FA - ${index + 1}`}
+                            {...field}
+                          />
+                        </FormControl>
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    key={field.id}
+                    control={form.control}
+                    name={`qualifications.${index}.valueFA`}
+                    render={({ field }) => (
+                      <FormItem className="flex gap-1 items-center w-full">
+                        <FormControl>
+                          <Input
+                            placeholder={`Value FA - ${index + 1}`}
+                            {...field}
+                          />
+                        </FormControl>
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          disabled={
+                            form.getValues("qualifications")?.length === 1
+                          }
+                          onClick={() => remove(index)}
+                        >
+                          <Trash className="text-gray-400" size={16} />
+                        </Button>
+                        <Button
+                          type="button"
+                          variant="ghost"
+                          size="icon"
+                          disabled={index + 1 < fields.length}
+                          onClick={() =>
+                            append({
+                              metricEN: "",
+                              metricFA: "",
+                              valueEN: "",
+                              valueFA: "",
+                            })
+                          }
+                        >
+                          <Plus className="text-gray-400" size={16} />
+                        </Button>
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              ))}
+            </div>
+            <FormMessage />
+          </FormItem>
         </div>
 
         <div className="col-span-12 md:col-span-3 space-y-4 order-first md:order-last">
