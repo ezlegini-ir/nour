@@ -33,7 +33,8 @@ const CategoryForm = ({ type, category }: Props) => {
     resolver: zodResolver(categoryFormSchema),
     mode: "onSubmit",
     defaultValues: {
-      name: category?.name_en || "",
+      nameEN: category?.name_en || "",
+      nameFA: category?.name_fa || "",
     },
   });
 
@@ -54,10 +55,24 @@ const CategoryForm = ({ type, category }: Props) => {
       <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
         <FormField
           control={form.control}
-          name="name"
+          name="nameEN"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Name (EN)</FormLabel>
+              <FormControl>
+                <Input {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="nameFA"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Name (FA)</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
