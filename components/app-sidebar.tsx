@@ -23,25 +23,6 @@ import NourTypoLogo from "./NourTypoLogo";
 import { Button } from "./ui/button";
 import { getSessionAdmin } from "@/data/admin";
 
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: "/panel",
-    icon: Home,
-  },
-  {
-    title: "Products",
-    url: "/panel/products",
-    icon: ScanBarcode,
-  },
-  {
-    title: "Categories",
-    url: "/panel/categories",
-    icon: ChartNoAxesGantt,
-  },
-];
-
 export async function AppSidebar() {
   const admin = await getSessionAdmin();
   return (
@@ -85,3 +66,22 @@ export async function AppSidebar() {
     </Sidebar>
   );
 }
+
+// Menu items.
+const items = [
+  {
+    title: "Home",
+    url: "/panel",
+    icon: Home,
+  },
+  {
+    title: "Products",
+    url: "/panel/products",
+    icon: ScanBarcode,
+  },
+  {
+    title: "Categories",
+    url: "/panel/categories",
+    icon: ChartNoAxesGantt,
+  },
+];

@@ -24,7 +24,7 @@ const ProductsGrid = () => {
                     <Image
                       alt={`Photo ${idx + 1}`}
                       src={dish}
-                      size={300}
+                      size={400}
                       className="rounded-md object-cover"
                     />
                   </div>

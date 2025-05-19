@@ -57,6 +57,10 @@ const ContactForm = () => {
         <p>
           <strong>Address:</strong> 15th km of Abhar-Zanjan Road, Zanjan, Iran
         </p>
+
+        <div className="bg-muted h-60 rounded-md flex justify-center items-center">
+          Google Map
+        </div>
       </div>
 
       <div className="w-full md:w-1/2">

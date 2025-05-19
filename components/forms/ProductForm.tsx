@@ -234,6 +234,8 @@ const ProductForm = ({ type, product, categories }: Props) => {
                       <FormItem className="flex gap-1 items-center w-full">
                         <FormControl>
                           <Input
+                            className="text-left"
+                            dir="rtl"
                             placeholder={`Metric FA - ${index + 1}`}
                             {...field}
                           />
@@ -250,6 +252,8 @@ const ProductForm = ({ type, product, categories }: Props) => {
                       <FormItem className="flex gap-1 items-center w-full">
                         <FormControl>
                           <Input
+                            className="text-left"
+                            dir="rtl"
                             placeholder={`Value FA - ${index + 1}`}
                             {...field}
                           />
