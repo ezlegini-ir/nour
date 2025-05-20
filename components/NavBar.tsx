@@ -3,6 +3,7 @@ import NourLogo from "./NourLogo";
 import { Button } from "./ui/button";
 import { getSessionAdmin } from "@/data/admin";
 import { User } from "lucide-react";
+import LangToggle from "./LangToggle";
 
 const NavBar = async () => {
   const admin = await getSessionAdmin();
@@ -23,6 +24,8 @@ const NavBar = async () => {
             </li>
           ))}
         </ul>
+
+        <LangToggle />
 
         {admin ? (
           <Link href={"/panel"}>

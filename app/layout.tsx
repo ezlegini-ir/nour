@@ -1,16 +1,23 @@
+import { Toaster } from "@/components/ui/sonner";
+import { getLangUniversal as getLang } from "@/lib/getLang";
 import type { Metadata } from "next";
 import "./globals.css";
-import { Toaster } from "@/components/ui/sonner";
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const savedLang = getLang();
+
   return (
-    <html lang="en">
+    <html
+      lang={savedLang === "FA" ? "fa" : "en"}
+      dir={savedLang === "FA" ? "rtl" : "ltr"}
+    >
       <body className="dark">
-        {children} <Toaster position="top-right" richColors />{" "}
+        {children}
+        <Toaster position="top-right" richColors />
       </body>
     </html>
   );
