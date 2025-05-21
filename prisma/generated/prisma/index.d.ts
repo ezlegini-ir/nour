@@ -9638,6 +9638,7 @@ export namespace Prisma {
 
   export type ProductWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    url?: string
     imageId?: number
     AND?: ProductWhereInput | ProductWhereInput[]
     OR?: ProductWhereInput[]
@@ -9647,14 +9648,13 @@ export namespace Prisma {
     description_en?: StringFilter<"Product"> | string
     description_fa?: StringFilter<"Product"> | string
     status?: EnumProductStatusFilter<"Product"> | $Enums.ProductStatus
-    url?: StringFilter<"Product"> | string
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
     image?: XOR<ImageNullableScalarRelationFilter, ImageWhereInput> | null
     galleryImages?: ProductGalleryListRelationFilter
     categories?: ProductCategoryListRelationFilter
     qualifications?: QualificationListRelationFilter
-  }, "id" | "imageId">
+  }, "id" | "url" | "imageId">
 
   export type ProductOrderByWithAggregationInput = {
     id?: SortOrder

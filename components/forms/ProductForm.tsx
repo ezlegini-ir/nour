@@ -1,6 +1,6 @@
 "use client";
 
-import { createProduct } from "@/actions/product";
+import { createProduct, deleteProduct, updateProduct } from "@/actions/product";
 import {
   ProductCategoryType,
   ProductType,
@@ -90,7 +90,7 @@ const ProductForm = ({ type, product, categories }: Props) => {
     setLoading(true);
 
     const res = isUpdateType
-      ? await createProduct(data)
+      ? await updateProduct(data, product?.id!)
       : await createProduct(data);
 
     if (res.error) {
@@ -109,6 +109,21 @@ const ProductForm = ({ type, product, categories }: Props) => {
 
   const onDelete = async () => {
     setLoading(true);
+
+    const res = await deleteProduct(product?.id!);
+
+    if (res.error) {
+      toast.error(res.error);
+      setLoading(false);
+      return;
+    }
+
+    if (res.success) {
+      toast.success(res.success);
+      setLoading(false);
+      router.push(`/panel/products`);
+      return;
+    }
   };
 
   // 🧮 Course Includes Field Array
@@ -152,7 +167,7 @@ const ProductForm = ({ type, product, categories }: Props) => {
             )}
           />
 
-          <div>
+          <div className="space-y-1">
             <FormField
               control={form.control}
               name="url"
@@ -168,11 +183,11 @@ const ProductForm = ({ type, product, categories }: Props) => {
             />
             {isUpdateType && (
               <Link
-                href={`${process.env.NEXT_PUBLIC_BASE_URL}/${product?.url}`}
-                className="text-xs text-gray-500"
+                href={`${process.env.NEXT_PUBLIC_BASE_URL}/products/${product?.url}`}
+                className="text-xs text-muted-foreground hover:text-primary"
               >
                 <p>
-                  {process.env.NEXT_PUBLIC_BASE_URL}/{product?.url}
+                  {process.env.NEXT_PUBLIC_BASE_URL}/products/{product?.url}
                 </p>
               </Link>
             )}

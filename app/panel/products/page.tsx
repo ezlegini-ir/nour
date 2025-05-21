@@ -14,6 +14,7 @@ const page = async ({ searchParams }: Props) => {
     include: {
       image: true,
       categories: { include: { category: true } },
+      qualifications: true,
     },
     orderBy: { id: "desc" },
 

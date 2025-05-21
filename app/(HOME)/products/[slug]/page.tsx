@@ -11,7 +11,7 @@ const page = () => {
       <ProductBreadCrumb productTitle="31-Piecse itali Shaped Service" />
 
       <div className="space-y-10">
-        <div className="flex gap-4 mt-4">
+        <div className="flex gap-10 mt-4">
           <div className="w-1/2">
             <Image
               alt="pic"

@@ -36,7 +36,7 @@ const DeleteButton = ({
           Delete
         </Button>
       </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent dir="ltr">
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
@@ -47,7 +47,7 @@ const DeleteButton = ({
           <AlertDialogCancel>Cancel</AlertDialogCancel>
           <AlertDialogAction
             onClick={onDelete}
-            className="bg-red-500 hover:bg-red-600"
+            className="bg-destructive hover:bg-destructive/80 text-red-950"
           >
             <Loader loading={loading} />
             Delete

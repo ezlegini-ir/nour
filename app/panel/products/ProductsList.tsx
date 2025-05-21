@@ -1,4 +1,5 @@
 import EditButton from "@/components/EditButton";
+import Image from "@/components/Image";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +14,6 @@ import {
 } from "@/prisma/generated/prisma";
 import { placeHolder } from "@/public";
 import { formatMiladiDate } from "@/utils/format";
-import Image from "next/image";
 import Link from "next/link";
 
 export interface CategoriesType {
@@ -48,7 +48,7 @@ const ProductsList = async ({ product, totalProducts, pageSize }: Props) => {
 
 const renderRows = (product: ProductType) => {
   return (
-    <TableRow key={product.id} className="odd:bg-slate-50">
+    <TableRow key={product.id} className="odd:bg-muted/40">
       <TableCell>
         <Link
           href={`/panel/products/${product.id}`}
@@ -57,17 +57,15 @@ const renderRows = (product: ProductType) => {
           <Image
             alt="product"
             src={product.image?.url || placeHolder}
-            width={65}
-            height={65}
+            size={50}
             className="rounded-sm aspect-square object-cover hidden lg:block bg-muted"
           />
           <span dir="rtl">{product.title_en}</span>
         </Link>
       </TableCell>
-      <TableCell className="text-center hidden xl:table-cell">hi</TableCell>
       <TableCell className="text-center hidden xl:table-cell">
         <Badge
-          variant={product.status === "DRAFT" ? "secondary" : "default"}
+          variant={product.status === "DRAFT" ? "secondary" : "green"}
           className="w-[100px]"
         >
           {product.status}
@@ -82,9 +80,6 @@ const renderRows = (product: ProductType) => {
             (product.categories.length > 2
               ? `، ${product?.categories?.length - 2} دیگر...`
               : "")}
-      </TableCell>
-      <TableCell className="text-center">
-        {(77389).toLocaleString("en-US")}
       </TableCell>
       <TableCell className="text-center hidden xl:table-cell">
         {formatMiladiDate(product.createdAt)}
@@ -101,11 +96,9 @@ const renderRows = (product: ProductType) => {
 
 const columns = [
   { label: "Title", className: "w-[550px]" },
-  { label: "Author", className: "text-center hidden xl:table-cell" },
   { label: "Status", className: "text-center hidden xl:table-cell" },
   { label: "Category", className: "text-center" },
-  { label: "Views", className: "text-center" },
-  { label: "Published At", className: "text-center hidden xl:table-cell" },
+  { label: "Published", className: "text-center hidden xl:table-cell" },
   {
     label: "Actions",
     className: "text-right w-[60px] hidden lg:table-cell",
