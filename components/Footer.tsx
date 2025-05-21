@@ -9,7 +9,7 @@ const Footer = () => {
           <NourTypoLogo />{" "}
         </Link>
 
-        <p className="text-center md:text-right">
+        <p className="text-center md:text-right" dir="ltr">
           © {new Date().getFullYear()} Nour Porcelain Co |{" "}
           <span>
             Developed By{" "}

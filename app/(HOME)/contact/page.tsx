@@ -1,15 +1,23 @@
 import ContactForm from "@/components/forms/ContactForm";
+import { getLang } from "@/lib/getLang";
 
-const ContactPage = () => {
+const ContactPage = async () => {
+  const faLang = (await getLang()) === "FA";
+
   return (
     <div className="space-y-8">
-      <h1 className="text-4xl font-bold text-center">Contact Us</h1>
+      <h1 className="text-4xl font-bold text-center">
+        {faLang ? "ارتباط با ما" : "Contact Us"}
+      </h1>
       <p className="text-center text-muted-foreground">
-        Have a question or inquiry? Send us a message and we will get back to
-        you soon.
+        {faLang
+          ? `سوالی دارید یا نیاز به راهنمایی دارید؟
+پیام خود را برای ما بفرستید، در کوتاه‌ترین زمان پاسخ‌گو خواهیم بود.`
+          : `Have a question or inquiry? Send us a message and we will get back to
+        you soon.`}
       </p>
 
-      <ContactForm />
+      <ContactForm faLang={faLang} />
     </div>
   );
 };

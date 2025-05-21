@@ -1,5 +1,5 @@
 import { Toaster } from "@/components/ui/sonner";
-import { getLangUniversal as getLang } from "@/lib/getLang";
+import { getLang } from "@/lib/getLang";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -8,7 +8,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const savedLang = getLang();
+  const savedLang = await getLang();
 
   return (
     <html

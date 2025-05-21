@@ -6,12 +6,19 @@ interface Props {
   src: string;
   size?: number;
   className?: string;
+  blurredPlaceholder?: boolean;
 }
 
-const Image = ({ alt, src, size, className }: Props) => {
+const Image = ({
+  alt,
+  src,
+  size,
+  className,
+  blurredPlaceholder = true,
+}: Props) => {
   return (
     <NextImage
-      placeholder="blur"
+      placeholder={blurredPlaceholder ? "blur" : "empty"}
       blurDataURL={src}
       alt={alt}
       src={src}

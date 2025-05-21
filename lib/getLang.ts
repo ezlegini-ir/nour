@@ -1,10 +1,10 @@
-export function getLangUniversal(): string {
+export async function getLang(): Promise<"FA" | "EN"> {
   if (typeof window !== "undefined") {
     // Client-side
-    return require("js-cookie").get("lang") || "EN";
+    return require("js-cookie").get("lang") || "FA";
   } else {
     // Server-side
     const { cookies } = require("next/headers");
-    return cookies().get("lang")?.value || "EN";
+    return (await cookies()).get("lang")?.value || "FA";
   }
 }

@@ -23,7 +23,11 @@ const formSchema = z.object({
 
 type FormType = z.infer<typeof formSchema>;
 
-const ContactForm = () => {
+interface Props {
+  faLang: boolean;
+}
+
+const ContactForm = ({ faLang }: Props) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,22 +44,31 @@ const ContactForm = () => {
   return (
     <div className="flex flex-col md:flex-row gap-20">
       <div className="w-full md:w-1/2 space-y-4">
-        <h2 className="text-xl font-bold">Contact Information</h2>
+        <h2 className="text-xl font-bold">
+          {faLang ? "اطلاعات تماس" : "Contact Info"}
+        </h2>
         <p className="text-muted-foreground">
-          If you have any questions or inquiries, please feel free to reach out
-          to us using the information below.
+          {faLang
+            ? "اگر سوال یا درخواستی دارید، لطفاً بدون تردید از طریق اطلاعات زیر با ما در ارتباط باشید."
+            : `If you have any questions or inquiries, please feel free to reach out
+          to us using the information below.`}
         </p>
 
         <hr />
 
         <p>
-          <strong>Email:</strong> info@chininour.com
+          <strong>{faLang ? "ایمیل:" : "Email:"}</strong> info@chininour.com
         </p>
         <p>
-          <strong>Phone:</strong> +98 24 3575 2007
+          <strong>{faLang ? "تماس:" : "Phone:"}</strong>{" "}
+          <span dir="ltr">+98 24 3575 2007</span>
         </p>
         <p>
-          <strong>Address:</strong> 15th km of Abhar-Zanjan Road, Zanjan, Iran
+          <strong>{faLang ? "آدرس:" : "Address:"}</strong>
+          {faLang
+            ? `کیلومتر 15 جاده ابهر، زنجان، شرکت چینی نور`
+            : `15th km of
+          Abhar-Zanjan Road, Zanjan, Iran`}
         </p>
 
         <div className="bg-muted h-60 rounded-md flex justify-center items-center">
@@ -71,9 +84,11 @@ const ContactForm = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Full Name</FormLabel>
+                  <FormLabel>
+                    {faLang ? "نام و نام خانوادگی" : "Full Name"}{" "}
+                  </FormLabel>
                   <FormControl>
-                    <Input placeholder="Full Name" {...field} />
+                    <Input {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -85,9 +100,25 @@ const ContactForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{faLang ? "ایمیل" : "Email"} </FormLabel>
                   <FormControl>
-                    <Input placeholder="example@email.com" {...field} />
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>
+                    {faLang ? "شماره تماس" : "Phone Number"}{" "}
+                  </FormLabel>
+                  <FormControl>
+                    <Input {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -99,20 +130,18 @@ const ContactForm = () => {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                  {faLang ? "پیام شما" : "Message"}{" "}
                   <FormControl>
-                    <Textarea
-                      className="min-h-32 max-h-56"
-                      placeholder="Your Message..."
-                      {...field}
-                    />
+                    <Textarea className="min-h-32 max-h-56" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <Button type="submit">Send Message</Button>
+            <Button type="submit">
+              {faLang ? "ارسال پیام" : "Send Message"}
+            </Button>
           </form>
         </Form>
       </div>

@@ -7,21 +7,26 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { getLang } from "@/lib/getLang";
 
 interface Props {
   productTitle: string;
 }
 
-const ProductBreadCrumb = ({ productTitle }: Props) => {
+const ProductBreadCrumb = async ({ productTitle }: Props) => {
+  const faLang = (await getLang()) === "FA";
+
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbLink href="/">{faLang ? "خانه" : "Home"}</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink href="/products">Products</BreadcrumbLink>
+          <BreadcrumbLink href="/products">
+            {faLang ? "محصولات" : "Products"}
+          </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

@@ -39,20 +39,20 @@ export default function LangToggle() {
         <Button variant="link">
           <ChevronDown className="text-foreground" />
           {language === "FA" ? (
-            <Image alt="farsi" src={iran} size={25} />
+            <Image alt="" src={iran} size={25} blurredPlaceholder={false} />
           ) : (
-            <Image alt="english" src={uk} size={25} />
+            <Image alt="" src={uk} size={25} blurredPlaceholder={false} />
           )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuRadioGroup value={language} onValueChange={setLanguage}>
           <DropdownMenuRadioItem value="FA">
-            <Image alt="farsi" src={iran} size={25} />
+            <Image alt="" src={iran} size={25} blurredPlaceholder={false} />
             Farsi
           </DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="EN">
-            <Image alt="english" src={uk} size={25} />
+            <Image alt="" src={uk} size={25} blurredPlaceholder={false} />
             English
           </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>

@@ -1,5 +1,6 @@
 "use client";
 
+import { createProduct } from "@/actions/product";
 import {
   ProductCategoryType,
   ProductType,
@@ -31,11 +32,13 @@ import { ProductFormType, productFormSchema } from "@/lib/validationSchema";
 import { Category } from "@/prisma/generated/prisma";
 import { useImagePreview } from "@/utils/image";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Plus, Trash } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useFieldArray, useForm } from "react-hook-form";
+import { toast } from "sonner";
 import ImageField from "../ImageField";
 import { Textarea } from "../ui/textarea";
-import { Plus, Trash } from "lucide-react";
 
 export interface CategoriesType {
   category: ProductCategoryType;
@@ -55,6 +58,7 @@ const ProductForm = ({ type, product, categories }: Props) => {
   const { imagePreview, setImagePreview } = useImagePreview(
     product?.image?.url
   );
+  const router = useRouter();
 
   // CONSTS
   const isUpdateType = type === "UPDATE";
@@ -82,9 +86,25 @@ const ProductForm = ({ type, product, categories }: Props) => {
     },
   });
 
-  // onSubmit handles post creation/updating.
   const onSubmit = async (data: ProductFormType) => {
-    console.log(data);
+    setLoading(true);
+
+    const res = isUpdateType
+      ? await createProduct(data)
+      : await createProduct(data);
+
+    if (res.error) {
+      toast.error(res.error);
+      setLoading(false);
+      return;
+    }
+
+    if (res.success) {
+      toast.success(res.success);
+      setLoading(false);
+      router.push(`/panel/products/${res.productId}`);
+      return;
+    }
   };
 
   const onDelete = async () => {

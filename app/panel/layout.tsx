@@ -3,7 +3,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <SidebarProvider>
+    <SidebarProvider dir="ltr">
       <AppSidebar />
       <main className="px-8 py-4  w-full">
         <SidebarTrigger />
